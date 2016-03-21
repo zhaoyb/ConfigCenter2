@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using AutoMapper;
+using ConfigCenter.Dto;
+using ConfigCenter.Repository;
+
+namespace ConfigCenter.Business
+{
+    public class AppSettingBusiness
+    {
+
+        public static List<AppSettingDto> GetAppSettings(int appId)
+        {
+            return Mapper.Map<List<AppSetting>, List<AppSettingDto>>(AppSetting.Query("WHERE AppId=@0", appId).ToList());
+        }
+
+        public static List<AppSettingDto> GetAppSettings(int appId, int pageIndex, int pageSize, out long totalPage)
+        {
+            var page = AppSetting.Page(pageIndex, pageSize, "WHERE AppId=@0", appId);
+            totalPage = page.TotalItems;
+            return Mapper.Map<List<AppSetting>, List<AppSettingDto>>(page.Items);
+        }
+
+        public static AppSettingDto GetAppSettingById(int id)
+        {
+            return Mapper.Map<AppSetting, AppSettingDto>(AppSetting.SingleOrDefault("WHERE Id=@0", id));
+        }
+
+        public static void SaveAppSetting(AppSettingDto appSettingDto)
+        {
+            var appSetting = Mapper.Map<AppSettingDto, AppSetting>(appSettingDto);
+            appSetting.Save();
+
+            var app = App.SingleOrDefault(appSettingDto.AppId);
+            if (app != null)
+            {
+                app.Version = DateTime.Now.ToString("yyyyMMddHHmmss");
+                app.Save();
+            }
+        }
+
+        public static bool DeleteAppSettingById(int id)
+        {
+            return AppSetting.Delete(id) > 0;
+        }
+    }
+}

@@ -1,0 +1,5 @@
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Repository\bin\Debug\ConfigCenter.Repository.dll.config
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Repository\bin\Debug\ConfigCenter.Repository.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Repository\bin\Debug\ConfigCenter.Repository.pdb
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Repository\obj\Debug\ConfigCenter.Repository.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Repository\obj\Debug\ConfigCenter.Repository.pdb

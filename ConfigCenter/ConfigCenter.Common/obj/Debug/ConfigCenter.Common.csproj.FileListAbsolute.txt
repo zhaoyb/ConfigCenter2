@@ -1,0 +1,12 @@
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Common\bin\Debug\ConfigCenter.Common.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Common\bin\Debug\ConfigCenter.Common.pdb
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Common\bin\Debug\AutoMapper.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Common\bin\Debug\ConfigCenter.Dto.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Common\bin\Debug\ConfigCenter.Repository.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Common\bin\Debug\ServiceStack.Interfaces.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Common\bin\Debug\ConfigCenter.Dto.pdb
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Common\bin\Debug\ConfigCenter.Repository.pdb
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Common\bin\Debug\AutoMapper.xml
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Common\obj\Debug\ConfigCenter.Common.csprojResolveAssemblyReference.cache
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Common\obj\Debug\ConfigCenter.Common.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Common\obj\Debug\ConfigCenter.Common.pdb

@@ -1,0 +1,46 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<ConfigCenter.Dto.AppSettingDto>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th class="nowrap" style="width:15%">序号</th>
+        <th style="width:15%">
+            @Html.DisplayNameFor(model => model.ConfigKey)
+        </th>
+        <th style="width: 40%">
+            @Html.DisplayNameFor(model => model.ConfigValue)
+        </th>
+        <th style="width:15%">
+            @Html.DisplayNameFor(model => model.ConfigType)
+        </th>
+        <th style="width:15%">
+            操作
+        </th>
+    </tr>
+    @{ int i = 0;}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@(Model.StartItemIndex + i++)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConfigKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConfigValue)
+            </td>
+            <td>
+                @if (item.ConfigType == 0)
+                {
+                   @Html.Raw("AppSetting")
+                }
+                else
+                {
+                    @Html.Raw("ConnectionString")
+                }
+            </td>
+            <td>
+                <a data-toggle="modal" class="btn btn-info" href="#" data-target="#myModal" data-id=@item.Id>编辑</a>
+                <a class="btn btn-danger" href="#" data-id=@item.Id>删除</a>
+            </td>
+        </tr>
+    }
+</table>

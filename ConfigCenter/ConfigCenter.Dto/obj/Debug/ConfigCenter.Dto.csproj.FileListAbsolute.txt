@@ -1,0 +1,13 @@
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ConfigCenter.Dto.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ConfigCenter.Dto.pdb
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Client.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Common.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Interfaces.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Text.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.xml
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Client.xml
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Common.xml
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Text.xml
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.pdb

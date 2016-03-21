@@ -1,0 +1,34 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<ConfigCenter.Dto.AppDto>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th class="nowrap" style="width:25%">序号</th>
+        <th style="width:25%">
+            @Html.DisplayNameFor(model => model.AppId)
+        </th>
+        <th style="width:25%">
+            @Html.DisplayNameFor(model => model.Version)
+        </th>
+        <th style="width:25%">
+            操作
+        </th>
+    </tr>
+    @{ int i = 0;}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@(Model.StartItemIndex + i++)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Version)
+            </td>
+            <td>
+                <a data-toggle="modal" class="btn btn-info" href="#" data-target="#myModal" data-id=@item.Id>编辑</a>
+                <a class="btn btn-danger" href="#" data-id=@item.Id>删除</a>
+                <a class="btn btn-primary" href="/AppSetting/Index?appId=@item.Id">查看配置</a>
+            </td>
+        </tr>
+    }
+</table>

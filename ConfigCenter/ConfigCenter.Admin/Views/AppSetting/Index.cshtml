@@ -1,0 +1,132 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<ConfigCenter.Dto.AppSettingDto>
+<script type="text/javascript">
+    var platform = '';
+    $(function () {
+        $("table a[class='btn btn-info']").click(function () {
+            edit($(this).attr('data-id'));
+        });
+
+        $("table a[class='btn btn-danger']").click(function () {
+            del($(this).attr('data-id'));
+        });
+
+        $('#newplatform').click(function () {
+            $('div.modal-body').html('');
+            $('#add_tmpl').tmpl().appendTo('div.modal-body');
+            $('#myModalLabel').text('添加');
+        });
+    });
+
+    function edit(id) {
+        $.getJSON('/AppSetting/GetAppSettingById?id=' + id, function (data) {
+            $('div.modal-body').html('');
+            $('#edit_tmpl').tmpl(data).appendTo('div.modal-body');
+            $('#myModalLabel').text('修改');
+        });
+    }
+
+    function del(id) {
+        if (confirm("确定删除吗?")) {
+            $.getJSON('/AppSetting/DeleteAppSettingById?id=' + id, function (data) {
+                if (data.Success) {
+                    window.location.reload();
+                }
+            });
+        }
+    }
+    function save() {
+        var data = $('#edit_form').serialize() || $('#form_add').serialize();
+        $.post('/AppSetting/SaveAppSetting', data, function (res) {
+            if (res.Success) {
+                window.location.reload();
+            }
+        });
+    };
+</script>
+
+<ol class="breadcrumb">
+    <li><a href="/">配置中心</a></li>
+    <li class="active">配置列表( <a id="newplatform" data-toggle="modal" data-target="#myModal">添加新配置</a>)</li>
+</ol>
+@Html.Partial("_AppTable", Model)
+@Html.Pager(Model, new PagerOptions { HorizontalAlign = "right", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>", Id = "bootstrappager" })
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-jquery-tmpl" id="add_tmpl">
+    <form id="form_add" class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">配置名称</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" name="ConfigKey" value="" placeholder="配置名称">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">配置值</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" name="ConfigValue" value="" placeholder="配置值">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">配置类型</label>
+            <div class="col-xs-8">
+                <select class="form-control" name="ConfigType">
+                    <option value="0">AppSetting</option>
+                    <option value="1">ConnectionString</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-primary" onclick="save();">添加</button>
+                <input type="hidden" name="AppId" value="@Request.QueryString["appId"]" />
+            </div>
+        </div>
+    </form>
+</script>
+
+<script type="text/x-jquery-tmpl" id="edit_tmpl">
+    <form id="edit_form" class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">配置名称</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" name="ConfigKey" value="${ConfigKey}" placeholder="配置名称">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">配置值</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" name="ConfigValue" value="${ConfigValue}" placeholder="配置值">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">配置类型</label>
+            <div class="col-xs-8">
+                <select class="form-control" name="ConfigType">
+                    <option value="0" {{if 0==ConfigType}} selected="selected" {{/if}}>AppSetting</option>
+                    <option value="1" {{if 1==ConfigType}} selected="selected" {{/if}}>ConnectionString</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-primary" onclick="save();">提交</button>
+                <input type="hidden" name="Id" value="${Id}" />
+                <input type="hidden" name="AppId" value="@Request.QueryString["appId"]" />
+            </div>
+        </div>
+    </form>
+</script>

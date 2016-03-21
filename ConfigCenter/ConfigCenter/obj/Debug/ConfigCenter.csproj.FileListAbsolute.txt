@@ -1,0 +1,12 @@
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter\bin\Debug\ConfigCenter.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter\bin\Debug\ConfigCenter.pdb
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter\bin\Debug\ConfigCenter.Dto.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter\bin\Debug\ServiceStack.Client.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter\bin\Debug\ServiceStack.Interfaces.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter\bin\Debug\ServiceStack.Text.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter\bin\Debug\ConfigCenter.Dto.pdb
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter\bin\Debug\ServiceStack.Client.xml
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter\bin\Debug\ServiceStack.Text.xml
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter\obj\Debug\ConfigCenter.csprojResolveAssemblyReference.cache
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter\obj\Debug\ConfigCenter.dll
+D:\Project\ConfigCenter\ConfigCenter\ConfigCenter\obj\Debug\ConfigCenter.pdb
