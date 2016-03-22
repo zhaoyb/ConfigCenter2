@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using ConfigCenter.Common;
 using ConfigCenter.Dto;
 using ConfigCenter.Repository;
 
@@ -39,6 +40,14 @@ namespace ConfigCenter.Business
             {
                 app.Version = DateTime.Now.ToString("yyyyMMddHHmmss");
                 app.Save();
+
+                //更新zookeeper的值
+                var path = ZooKeeperHelper.ZooKeeperRootNode + "/" + app.AppId;
+                if (!ZooKeeperHelper.Exists(path))
+                {
+                    ZooKeeperHelper.Create(path, null);
+                }
+                ZooKeeperHelper.SetData(path, app.Version, -1);
             }
         }
 

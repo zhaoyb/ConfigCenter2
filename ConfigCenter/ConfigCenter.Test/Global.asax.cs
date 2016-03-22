@@ -12,11 +12,11 @@ namespace ConfigCenter.Test
     {
         protected void Application_Start()
         {
-            ConfigCenter.Init();
+            ConfigCenter.Init("Account");
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            
+
         }
     }
 }

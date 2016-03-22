@@ -11,3 +11,16 @@ D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Com
 D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Text.xml
 D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.dll
 D:\Project\ConfigCenter\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.pdb
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ConfigCenter.Dto.dll
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ConfigCenter.Dto.pdb
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Client.dll
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Common.dll
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.dll
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Interfaces.dll
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Text.dll
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.xml
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Client.xml
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Common.xml
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Text.xml
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.dll
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.pdb

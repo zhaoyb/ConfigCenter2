@@ -9,14 +9,15 @@ namespace ConfigCenter
         private readonly Thread _worker;
         private bool _isStop;
 
-        private readonly Action _exec;
+        private readonly Action<string> _exec;
         private readonly int _interval;
         private readonly int _delay;
-
-        public Task(Action exec, int interval, int delay)
+        private readonly string _param;
+        public Task(Action<string> exec, string param, int interval, int delay)
         {
             try
             {
+                _param = param;
                 _exec = exec;
                 _interval = interval;
                 _delay = delay;
@@ -42,7 +43,7 @@ namespace ConfigCenter
         private void WorkerMethod()
         {
 
-            if (_delay>0)
+            if (_delay > 0)
                 Thread.CurrentThread.Join(_delay);
 
             while (!_isStop)
@@ -51,7 +52,7 @@ namespace ConfigCenter
                 {
                     try
                     {
-                        _exec();
+                        _exec(_param);
                     }
                     catch (Exception ex)
                     {

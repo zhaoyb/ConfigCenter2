@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web.Configuration;
 using ConfigCenter.Dto;
 using ServiceStack;
+using ZooKeeperNet;
 
 namespace ConfigCenter
 {
@@ -16,10 +17,21 @@ namespace ConfigCenter
 
         private static readonly JsonServiceClient Client = new JsonServiceClient("http://configcenter.xx.com/api");
 
-        public static void Init()
+        public static void Init(string appId)
         {
-            SyncVersion();
-            _task = new Task(SyncVersion, 10000, 10000);
+            SyncVersion(appId);
+            //_task = new Task(SyncVersion, appId, 10000, 10000);
+
+            ZooKeeper zk = new ZooKeeper("172.16.22.120:2181", new TimeSpan(0, 0, 0, 50000), null);
+
+            ZookeeperWatcherHelp.Register(zk, "/ConfigCenter/" + appId, (@event, resut) =>
+            {
+                if (@event.Type == EventType.NodeDataChanged)
+                {
+                    SyncVersion(appId);
+                }
+            }, null);
+
         }
 
         public static void Stop()
@@ -27,9 +39,9 @@ namespace ConfigCenter
             _task.Stop();
         }
 
-        private static void SyncVersion()
+        private static void SyncVersion(string appid)
         {
-            var appVersionResponse = Client.Get(new GetAppVersion { AppId = "Account" });
+            var appVersionResponse = Client.Get(new GetAppVersion { AppId = appid });
             if (appVersionResponse.AppDto != null)
             {
                 if (_currentVersion != appVersionResponse.AppDto.Version) //客户端保存的版本号和服务端的版本号不一致，需要客户端去更新
