@@ -8,3 +8,4 @@ D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Repository\bin\Debug\Confi
 D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Repository\bin\Debug\ConfigCenter.Repository.pdb
 D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Repository\obj\Debug\ConfigCenter.Repository.dll
 D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Repository\obj\Debug\ConfigCenter.Repository.pdb
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Repository\obj\Debug\ConfigCenter.Repository.csprojResolveAssemblyReference.cache
