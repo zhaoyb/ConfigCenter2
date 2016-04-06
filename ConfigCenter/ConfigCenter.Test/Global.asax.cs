@@ -18,5 +18,11 @@ namespace ConfigCenter.Test
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
         }
+
+        protected void Application_End(object sender, EventArgs e)
+        {
+            ConfigCenter.Stop();
+        }
+
     }
 }

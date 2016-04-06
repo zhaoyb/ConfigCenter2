@@ -20,7 +20,6 @@ namespace ConfigCenter
         public static void Init(string appId)
         {
             SyncVersion(appId);
-            //_task = new Task(SyncVersion, appId, 10000, 10000);
 
             ZooKeeper zk = new ZooKeeper("172.16.22.120:2181", new TimeSpan(0, 0, 0, 50000), null);
 
