@@ -175,6 +175,10 @@
       <Project>{FDB3A441-D05C-4575-A2D2-41CDD8FC5CD3}</Project>
       <Name>ConfigCenter.Dto</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ConfigCenter.Repository\ConfigCenter.Repository.csproj">
+      <Project>{2721FD56-CA91-439D-9BFC-B9B991599326}</Project>
+      <Name>ConfigCenter.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

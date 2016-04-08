@@ -52,13 +52,13 @@
 @using (Html.BeginForm("Index", ViewContext.RouteData.GetRequiredString("Controller"), new RouteValueDictionary { { "pageindex", "" } }, FormMethod.Get))
 {
     <div class="form-inline well well-sm">
-        <span>Appid  </span><input type="text" name="kword" value="@Request.QueryString["kword"]" style="width: 120px" class="form-control" />
+        <span>Appid  </span><input type="text" name="kword" value="@Request.QueryString["kword"]" style="width: 120px" class="form-control"/>
         <input type="submit" value="搜索(S)" accesskey="S" class="btn btn-default" />
     </div>
 }
 
 @Html.Partial("_AppTable", Model)
-@Html.Pager(Model, new PagerOptions { HorizontalAlign = "right", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>", Id = "bootstrappager" })
+@Html.Pager(Model, new PagerOptions { HorizontalAlign = "right", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}&nbsp;</li>", Id = "bootstrappager" })
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

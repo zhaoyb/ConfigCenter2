@@ -47,10 +47,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConfigCenter.Common\ConfigCenter.Common.csproj">
-      <Project>{B0692E9D-5D70-4C14-A0F0-AE599F53A806}</Project>
-      <Name>ConfigCenter.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ConfigCenter.Dto\ConfigCenter.Dto.csproj">
       <Project>{FDB3A441-D05C-4575-A2D2-41CDD8FC5CD3}</Project>
       <Name>ConfigCenter.Dto</Name>

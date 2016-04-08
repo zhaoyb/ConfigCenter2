@@ -7,9 +7,9 @@ namespace ConfigCenter.Business
 {
     public class AppBusiness
     {
-        public static List<AppDto> GetApps(int pageIndex, int pageSize, out long totalPage)
+        public static List<AppDto> GetApps(int pageIndex, int pageSize, string kword, out long totalPage)
         {
-            var page = App.Page(pageIndex, pageSize, "", new object[] { });
+            var page = App.Page(pageIndex, pageSize, "WHERE AppId LIKE @0", new object[] { "%" + kword + "%" });
             totalPage = page.TotalItems;
             return Mapper.Map<List<App>, List<AppDto>>(page.Items);
         }

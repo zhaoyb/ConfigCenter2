@@ -24,4 +24,3 @@ D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack
 D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceStack.Text.xml
 D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.dll
 D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.pdb
-D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.csprojResolveAssemblyReference.cache

@@ -17,24 +17,55 @@ namespace ConfigCenter
 
         private static readonly JsonServiceClient Client = new JsonServiceClient("http://configcenter.xx.com/api");
 
+        private static ZooKeeper zk;
+
+
+        static ConfigCenter()
+        {
+            var appVersionResponse = Client.Get(new GetAppVersion { AppId = "ZookeeperConfig" });
+
+            if (appVersionResponse.AppDto != null)
+            {
+                var appSettings = Client.Get(new GetAppSettings { AppId = appVersionResponse.AppDto.Id });
+                if (appSettings != null)
+                {
+                    foreach (AppSettingDto appSetting in appSettings.AppSettings)
+                    {
+                        if (appSetting.ConfigKey == "ZookeeperAddress")
+                        {
+                            zk = new ZooKeeper(appSetting.ConfigValue, new TimeSpan(0, 0, 0, 50000), null);
+
+                        }
+                    }
+
+                }
+            }
+        }
+
+
         public static void Init(string appId)
         {
-            SyncVersion(appId);
+            SyncVersion(appId);  //先同步获取一次，保证global之后执行的代码的都能获取到配置
 
-            ZooKeeper zk = new ZooKeeper("172.16.22.120:2181", new TimeSpan(0, 0, 0, 50000), null);
-
-            ZookeeperWatcherHelp.Register(zk, "/ConfigCenter/" + appId, (@event, resut) =>
+            if (zk != null)   //如果zookeeper可用，则注册zookeeper
             {
-                if (@event.Type == EventType.NodeDataChanged)
+
+                ZookeeperWatcherHelp.Register(zk, "/ConfigCenter/" + appId, (@event, resut) =>
                 {
-                    SyncVersion(appId);
-                }
-            }, null);
+                    if (@event.Type == EventType.NodeDataChanged)
+                    {
+                        SyncVersion(appId);
+                    }
+                }, null);
+            }
+
+            _task = new Task(SyncVersion, appId, 20000, 10000);  //如果zookeeper不可用，同时为了保证在zookeeper挂掉后，有补偿措施，启动一个定时获取的任务。
 
         }
 
         public static void Stop()
         {
+            zk.Dispose();
             _task.Stop();
         }
 

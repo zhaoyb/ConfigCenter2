@@ -49,6 +49,14 @@
     <li><a href="/">配置中心</a></li>
     <li class="active">配置列表( <a id="newplatform" data-toggle="modal" data-target="#myModal">添加新配置</a>)</li>
 </ol>
+@using (Html.BeginForm("Index", ViewContext.RouteData.GetRequiredString("Controller"), new RouteValueDictionary { { "pageindex", "" } }, FormMethod.Get))
+{
+    <div class="form-inline well well-sm">
+        <span>ConfigKey:  </span><input type="text" name="kword" value="@Request.QueryString["kword"]" style="width: 120px" class="form-control" />
+        <input type="hidden" name="appId" value="@Request.QueryString["appId"]" />
+        <input type="submit" value="搜索(S)" accesskey="S" class="btn btn-default" />
+    </div>
+}
 @Html.Partial("_AppTable", Model)
 @Html.Pager(Model, new PagerOptions { HorizontalAlign = "right", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>", Id = "bootstrappager" })
 
@@ -116,8 +124,8 @@
             <label class="col-sm-3 control-label">配置类型</label>
             <div class="col-xs-8">
                 <select class="form-control" name="ConfigType">
-                    <option value="0" {{if 0==ConfigType}} selected="selected" {{/if}}>AppSetting</option>
-                    <option value="1" {{if 1==ConfigType}} selected="selected" {{/if}}>ConnectionString</option>
+                    <option value="0" {{if 0 == ConfigType}} selected="selected" {{/if}}>AppSetting</option>
+                    <option value="1" {{if 1 == ConfigType}} selected="selected" {{/if}}>ConnectionString</option>
                 </select>
             </div>
         </div>
