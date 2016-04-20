@@ -13,6 +13,10 @@ namespace ConfigCenter.Api
         protected void Application_Start()
         {
             ObjectMapping.Init();
+            if (!ZooKeeperHelper.Exists(ZooKeeperHelper.ZooKeeperRootNode))
+            {
+                ZooKeeperHelper.Create(ZooKeeperHelper.ZooKeeperRootNode, null);
+            }
             new AppHost().Init();
         }
     }

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Script.Serialization;
-using ConfigCenter.Business;
-using ConfigCenter.Common;
+﻿using ConfigCenter.Business;
 using ConfigCenter.Dto;
-using ConfigCenter.Repository;
+using System;
+using System.Web.Mvc;
 using Webdiyer.WebControls.Mvc;
 
 namespace ConfigCenter.Admin.Controllers
@@ -49,21 +43,6 @@ namespace ConfigCenter.Admin.Controllers
             {
                 AppSettingBusiness.SaveAppSetting(appSettingDto);
                 responseResult = new ResponseResult(true, "");
-
-                var app = App.SingleOrDefault(appSettingDto.AppId);
-                if (app != null)
-                {
-                    app.Version = DateTime.Now.ToString("yyyyMMddHHmmss");
-                    app.Save();
-
-                    //更新zookeeper的值
-                    var path = ZooKeeperHelper.ZooKeeperRootNode + "/" + app.AppId;
-                    if (!ZooKeeperHelper.Exists(path))
-                    {
-                        ZooKeeperHelper.Create(path, null);
-                    }
-                    ZooKeeperHelper.SetData(path, app.Version, -1);
-                }
             }
             catch (Exception)
             {

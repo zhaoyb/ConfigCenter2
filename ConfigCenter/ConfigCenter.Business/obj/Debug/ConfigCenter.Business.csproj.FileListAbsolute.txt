@@ -34,3 +34,8 @@ D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Business\bin\Debug\AutoMap
 D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Business\obj\Debug\ConfigCenter.Business.csprojResolveAssemblyReference.cache
 D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Business\obj\Debug\ConfigCenter.Business.dll
 D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Business\obj\Debug\ConfigCenter.Business.pdb
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Business\bin\Debug\ConfigCenter.Common.dll
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Business\bin\Debug\ZooKeeperNet.dll
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Business\bin\Debug\log4net.dll
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Business\bin\Debug\ConfigCenter.Common.pdb
+D:\GitProject\ConfigCenter2\ConfigCenter\ConfigCenter.Business\bin\Debug\log4net.xml
